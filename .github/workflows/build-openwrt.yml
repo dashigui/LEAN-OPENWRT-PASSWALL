@@ -59,10 +59,10 @@ jobs:
       run: cd openwrt && echo -e "\nsrc-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
       
     - name: Add Openclash
-      run: cd openwrt && echo -e "\nsrc-git https://github.com/vernesong/OpenClash"
+      run: cd openwrt && echo -e "\nsrc-git https://github.com/vernesong/OpenClash" >> feeds.conf.default
       
     - name: Add Smartdns
-      run: cd openwrt && echo -e "\nsrc-git https://github.com/pymumu/smartdns"
+      run: cd openwrt && echo -e "\nsrc-git https://github.com/pymumu/smartdns" >> feeds.conf.default
       
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
