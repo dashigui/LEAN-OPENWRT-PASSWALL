@@ -58,18 +58,18 @@ jobs:
     - name: Add Passwall
       run: cd openwrt && echo -e "\nsrc-git lienol https://github.com/Lienol/openwrt-package" >> feeds.conf.default
       
+    - name: Update feeds
+      run: cd openwrt && ./scripts/feeds update -a
+
+    - name: Install feeds
+      run: cd openwrt && ./scripts/feeds install -a      
+      
     - name: Add Smartdns
       run: cd openwrt && echo -e "git clone https://github.com/ujincn/luci-app-smartdns-compat.git" >> feeds.conf.default
       
     - name: Add Smartdns2
       run: cd openwrt && echo -e "git clone https://github.com/ujincn/smartdns.git" >> feeds.conf.default
             
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
-
-    - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a    
-
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
