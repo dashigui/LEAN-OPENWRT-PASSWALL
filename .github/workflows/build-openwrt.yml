@@ -63,12 +63,6 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a      
-      
-    - name: Add Smartdns
-      run: cd openwrt && echo -e "git clone https://github.com/ujincn/luci-app-smartdns-compat.git" >> feeds.conf.default
-      
-    - name: Add Smartdns2
-      run: cd openwrt && echo -e "git clone https://github.com/ujincn/smartdns.git" >> feeds.conf.default
             
     - name: Load custom configuration
       run: |
